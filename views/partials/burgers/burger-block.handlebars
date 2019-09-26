@@ -1,10 +1,10 @@
-<li>
-	{{burger_name}}
+<li class="menu text-left">
 
 	{{#unless devoured}}
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devoured}}">
-		DEVOUR IT!
+	<button class="change-devour btn btn-dark" data-id="{{id}}" data-newdevour="{{devoured}}">
+		DEVOUR IT! <i class="fas fa-utensils"></i>
 	</button>
 	{{/unless}}
 
+	{{burger_name}}
 </li>

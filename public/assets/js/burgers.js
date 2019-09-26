@@ -1,31 +1,27 @@
 $(function() {
-  $(".change-devour").on("click", function(event) {
-    var id = $(this).data("id")
-    var newDevour = $(this).data("newdevour")
+  $(".change-devour").on("click", function() {
+    let id = $(this).data("id")
+    let newDevour = $(this).data("newdevour")
 
-    var newDevourState = {
+    let newDevourState = {
       devoured: !newDevour
-    };
-    console.log(newDevourState)
-    console.log(id)
-    // Send the PUT request.
+    }
+
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newDevourState
     }).then(
       function() {
         console.log("changed devoured to", newDevour)
-        // Reload the page to get the updated list
         location.reload();
       }
     )
   })
 
   $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault()
 
-    var newBurger = {
+    let newBurger = {
       name: $("#ca").val().trim(),
     }
 
@@ -35,26 +31,9 @@ $(function() {
       data: newBurger
     }).then(
       function() {
-        console.log("created new cat");
-        // Reload the page to get the updated list
+        console.log("created new burger");
         location.reload();
       }
     )
   })
-
-    $(".delete-cat").on("click", function(event) {
-    var id = $(this).data("id")
-
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted cat", id)
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    )
-  })
-  
 })

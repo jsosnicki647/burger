@@ -1,4 +1,3 @@
-
 <div class="text-center">
   <h1>Eat-da-Burger!</h1>
   <br>
@@ -10,42 +9,43 @@
   <h2>Add a Burger</h2>
   <form class="create-form">
     <div class="form-group">
-      <label for="ca">Burger Name:</label>
+      <label for="ca" class="font-weight-bold">Burger Name:</label>
       <input type="text" id="ca" name="name">
+      <button class="btn btn-success" type="submit">Add Burger <i class="fas fa-hamburger"></i></button>
     </div>
-    <button type="submit">Add Burger</button>
   </form>
 
   <br>
   <hr>
   <br>
-
-  <div class="row">
-    <div class="col-6">
-    <h2>Burger Menu</h2>
-      <ul class = "list-unstyled">
-        {{#each burgers}}
-          {{#unless devoured}}
+  <div class="bottom">
+    <div class="row">
+      <div class="col-6">
+        <h2 class="list-title">Burger Menu</h2>
+        <div class="list-container justify-content-center">
+          <ul class="list-unstyled font-weight-bold not-devoured">
+            {{#each burgers}}
+            {{#unless devoured}}
             {{> burgers/burger-block devoured=false}}
-          {{/unless}}
-        {{/each}}
-      </ul>
-    </div>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
 
-    <div class="col-6">
-      <h2>Devoured!</h2>
-      <ul class = "list-unstyled">
-        {{#each burgers}}
-          {{#if devoured}}
+      <div class="col-6">
+        <h2 class="list-title">Devoured!</h2>
+        <div class="list-container justify-content-center">
+          <ul class="list-unstyled font-weight-bold devoured">
+            {{#each burgers}}
+            {{#if devoured}}
             {{> burgers/burger-block devoured=true}}
-          {{/if}}
-        {{/each}}
-      </ul>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-
-
-
+  </div>
 
 </div>
-

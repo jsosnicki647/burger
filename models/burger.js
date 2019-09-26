@@ -7,7 +7,6 @@ const burger = {
         })
     },
     create: function(val, cb) {
-        console.log("FUCK")
         orm.insertOne(val, function(res) {
             cb(res)
         })

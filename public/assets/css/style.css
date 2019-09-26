@@ -1,3 +1,22 @@
 body{
     background-color: yellow;
+    
+}
+
+.menu{
+    color: #8FFC17;
+    margin-top: 1em;
+}
+
+.list-container{
+    display: flex;
+}
+
+.list-title{
+    text-decoration: underline;
+    color: white;
+}
+
+.bottom{
+    background-color: brown;
 }

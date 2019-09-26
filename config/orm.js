@@ -8,9 +8,7 @@ const orm = {
         })
     },
     insertOne: function(val, cb) {
-        console.log("val: " + val)
         let queryString = "INSERT INTO burgers(burger_name) VALUES (" + "'" + val + "'" + ")"
-        console.log(queryString)
         connection.query(queryString, (err, data) => {
             if (err) throw err
             cb(data)
@@ -23,7 +21,5 @@ const orm = {
         })
     }
 }
-
-
 
 module.exports = orm

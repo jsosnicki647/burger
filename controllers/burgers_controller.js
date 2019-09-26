@@ -12,10 +12,7 @@ router.get("/", (req, res) => {
     })
 })
 
-router.post("/api/burgers", (req, res) => {
-    console.log(req.body.name)
-    burger.create(req.body.name, (data) => res.json({id: data.insertID}))
-})
+router.post("/api/burgers", (req, res) => burger.create(req.body.name, (data) => res.json({id: data.insertID})))
 
 router.put("/api/burgers/:id", (req, res) => {
     var condition = "id = " + req.params.id

@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   user: "root",
   password: "Jeannie63",
   database: "burgers_db"
-});
+})
 
 connection.connect((err) => {
   if (err) {
@@ -14,6 +14,6 @@ connection.connect((err) => {
     return;
   }
   console.log("connected as id " + connection.threadId);
-});
+})
 
 module.exports = connection;
