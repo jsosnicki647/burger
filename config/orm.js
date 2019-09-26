@@ -21,13 +21,6 @@ const orm = {
             if (err) throw err
             cb(data)
         })
-    },
-    deleteOne: function(condition, cb) {
-        let queryString = "DELETE FROM burgers WHERE " + condition
-        connection.query(queryString, (err, data) => {
-            if (err) throw err
-            cb(data)
-        })
     }
 }
 
